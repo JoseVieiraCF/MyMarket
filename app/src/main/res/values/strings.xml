@@ -8,6 +8,7 @@
     <string name="produtos">Produtos</string>
     <string name="addToCartText">Adicionar ao Carrinho</string>
     <string name="myCartText">Meu Carrinho</string>
+    <string name="itemQuantityDialog">Quantidade</string>
 
     <string-array name="products_category">
         <item>Categorias</item>

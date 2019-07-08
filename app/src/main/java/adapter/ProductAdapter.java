@@ -1,5 +1,7 @@
 package adapter;
 
+import android.app.AlertDialog;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,14 +14,18 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import br.com.compilando.mymarket.MarketActivity;
 import br.com.compilando.mymarket.R;
 import model.Product;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
     private List<Product> products;
     private int quantity = 0;
-    public ProductAdapter(List<Product> products) {
+    private Context context;
+    LayoutInflater layoutInflater;
+    public ProductAdapter(List<Product> products, Context context) {
         this.products = products;
+        this.context = context;
     }
 
     @NonNull
@@ -37,18 +43,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         productViewHolder.nome.setText(products.get(i).getName());
         productViewHolder.price.setText("R$ "+ products.get(i).getPrice());
-
-
-        /*
-        productViewHolder.btnProducdAdd.setOnClickListener(new View.OnClickListener() {
+        productViewHolder.btnAddtoShoppingCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                productViewHolder.productQuantity.setText(String.valueOf(products.get(i).getQuantity()));
                 System.out.println(products.get(i).getName());
+                Toast.makeText(context,"Adicionado com sucesso",Toast.LENGTH_SHORT).show();
+
             }
         });
-        */
 
     }
 
@@ -66,6 +68,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public class ProductViewHolder extends RecyclerView.ViewHolder{
         private TextView nome;
         private TextView price;
+        private ImageView btnAddtoShoppingCart;
         //TextView productQuantity;
         //ImageView btnProducdAdd;
         //ImageView getBtnProducdRemove;
@@ -73,6 +76,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             super(itemView);
             nome = itemView.findViewById(R.id.textProductNameList);
             price = itemView.findViewById(R.id.textProductPriceList);
+            btnAddtoShoppingCart = itemView.findViewById(R.id.imageViewAddToCart);
             //productQuantity = itemView.findViewById(R.id.textItemQuantity);
             //btnProducdAdd = itemView.findViewById(R.id.btnProducdAdd);
             //getBtnProducdRemove = itemView.findViewById(R.id.btnProducdRemove);

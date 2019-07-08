@@ -1,5 +1,7 @@
 package br.com.compilando.mymarket;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +33,7 @@ public class MarketActivity extends AppCompatActivity {
     private EditText searchText;
     private ImageView btnSearch;
     private Spinner spinnerProductCategory;
+    private static int itemId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +55,11 @@ public class MarketActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showMessage(searchText.getText().toString());
+
             }
         });
+
+
 
 
         /*********************OnTextSubmit*************************/
@@ -88,7 +94,7 @@ public class MarketActivity extends AppCompatActivity {
 
         recyclerViewProducts.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        productAdapter = new ProductAdapter(products);
+        productAdapter = new ProductAdapter(products,getApplicationContext());
         recyclerViewProducts.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         recyclerViewProducts.setAdapter(productAdapter);
         /************************************************************************************/
@@ -103,6 +109,7 @@ public class MarketActivity extends AppCompatActivity {
                 if (position > 0){
                     String item = spinnerProductCategory.getSelectedItem().toString();
                     showMessage(item);
+
                 }
 
             }
@@ -128,4 +135,13 @@ public class MarketActivity extends AppCompatActivity {
     private void showMessage(String msg){
         Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
     }
+    public void teste(){
+        android.app.AlertDialog.Builder mbuilder = new android.app.AlertDialog.Builder(MarketActivity.this);
+        View v = getLayoutInflater().inflate(R.layout.dialog_add_to_cart,null);
+        mbuilder.setView(v);
+        AlertDialog alertDialog = mbuilder.create();
+        alertDialog.show();
+    }
+
+
 }
