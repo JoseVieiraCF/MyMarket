@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import adapter.ProductAdapter;
@@ -39,6 +38,7 @@ public class MarketActivity extends AppCompatActivity {
         setContentView(R.layout.activity_market);
 
 
+
         actionBar = getSupportActionBar();
         actionBar.setTitle("Mercadinho");
 
@@ -54,6 +54,7 @@ public class MarketActivity extends AppCompatActivity {
                 showMessage(searchText.getText().toString());
             }
         });
+
 
         /*********************OnTextSubmit*************************/
         /*
@@ -114,11 +115,13 @@ public class MarketActivity extends AppCompatActivity {
         spinnerProductCategory.setOnItemSelectedListener(escolha);
 
         /***********************************************************************************************/
+    }
 
-
-
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_cart, menu);
+        return true;
 
     }
 

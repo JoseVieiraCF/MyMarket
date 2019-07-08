@@ -6,6 +6,8 @@
     <string name="banner">Banner</string>
     <string name="money_card">Cartão ou Dinheiro</string>
     <string name="produtos">Produtos</string>
+    <string name="addToCartText">Adicionar ao Carrinho</string>
+    <string name="myCartText">Meu Carrinho</string>
 
     <string-array name="products_category">
         <item>Categorias</item>

@@ -16,8 +16,8 @@ import br.com.compilando.mymarket.R;
 import model.Product;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
-    List<Product> products;
-    int quantity = 0;
+    private List<Product> products;
+    private int quantity = 0;
     public ProductAdapter(List<Product> products) {
         this.products = products;
     }
@@ -36,10 +36,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public void onBindViewHolder(@NonNull final ProductViewHolder productViewHolder, final int i) {
 
         productViewHolder.nome.setText(products.get(i).getName());
-        productViewHolder.price.setText("R$ "+ String.valueOf(products.get(i).getPrice()));
+        productViewHolder.price.setText("R$ "+ products.get(i).getPrice());
 
 
-
+        /*
         productViewHolder.btnProducdAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,13 +48,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 System.out.println(products.get(i).getName());
             }
         });
+        */
 
     }
 
-    private String addmore() {
-        quantity++;
-        return String.valueOf(quantity);
-    }
 
     @Override
     public int getItemCount() {
@@ -67,18 +64,18 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     public class ProductViewHolder extends RecyclerView.ViewHolder{
-        TextView nome;
-        TextView price;
-        TextView productQuantity;
-        ImageView btnProducdAdd;
-        ImageView getBtnProducdRemove;
+        private TextView nome;
+        private TextView price;
+        //TextView productQuantity;
+        //ImageView btnProducdAdd;
+        //ImageView getBtnProducdRemove;
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             nome = itemView.findViewById(R.id.textProductNameList);
             price = itemView.findViewById(R.id.textProductPriceList);
-            btnProducdAdd = itemView.findViewById(R.id.btnProducdAdd);
-            getBtnProducdRemove = itemView.findViewById(R.id.btnProducdRemove);
-            productQuantity = itemView.findViewById(R.id.textItemQuantity);
+            //productQuantity = itemView.findViewById(R.id.textItemQuantity);
+            //btnProducdAdd = itemView.findViewById(R.id.btnProducdAdd);
+            //getBtnProducdRemove = itemView.findViewById(R.id.btnProducdRemove);
         }
     }
 }
