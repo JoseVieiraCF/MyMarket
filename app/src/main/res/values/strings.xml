@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Market</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="banner">Banner</string>
+    <string name="money_card">Cartão ou Dinheiro</string>
+    <string name="produtos">Produtos</string>
+
+    <string-array name="products_category">
+        <item>Categorias</item>
+        <item>Comidas</item>
+        <item>Bebidas</item>
+        <item>Limpeza</item>
+        <item>Higiene</item>
+    </string-array>
+</resources>

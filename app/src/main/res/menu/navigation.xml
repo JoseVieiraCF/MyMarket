@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_markete"
+        android:title=""
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
+        />
+    <item
+        android:id="@+id/navigation_user"
+        android:title=""
+        android:icon="@drawable/ic_person_black_24dp"
+        />
+    <item
+        android:id="@+id/navigation_informations"
+        android:title=""
+        android:icon="@drawable/ic_priority_high_black_24dp"
+        />
+
+</menu>
