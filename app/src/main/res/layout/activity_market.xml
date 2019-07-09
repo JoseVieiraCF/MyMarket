@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/bannerMarketActivity"
         android:layout_width="match_parent"
-        android:layout_height="189dp"
+        android:layout_height="151dp"
         android:contentDescription="@string/banner"
         app:srcCompat="@android:color/holo_red_light" />
     <View

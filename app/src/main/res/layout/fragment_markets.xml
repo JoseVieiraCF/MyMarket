@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="56dp"
     tools:context=".MarketsFragment">
 
     <LinearLayout
@@ -21,6 +22,6 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/market_list"
             android:layout_width="match_parent"
-            android:layout_height="374dp" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 </FrameLayout>
