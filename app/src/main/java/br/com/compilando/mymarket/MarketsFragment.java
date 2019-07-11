@@ -39,6 +39,7 @@ public class MarketsFragment extends Fragment {
         rvMarket.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvMarket.setAdapter(adapterItem);
 
+
         return view;
     }
 

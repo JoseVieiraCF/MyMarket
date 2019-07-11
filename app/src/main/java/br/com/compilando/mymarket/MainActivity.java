@@ -3,6 +3,7 @@ package br.com.compilando.mymarket;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -27,8 +28,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         Fragment marcketFragment = MarketsFragment.newInstance();
         openFragment(marcketFragment);
-
-
 
 
     }
@@ -58,9 +57,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
     private void openFragment(Fragment fragment) {
+        getSupportFragmentManager().popBackStack(null,FragmentManager.POP_BACK_STACK_INCLUSIVE);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, fragment);
-        transaction.addToBackStack(null);
         transaction.commit();
     }
 }

@@ -16,6 +16,7 @@ import java.util.List;
 
 import br.com.compilando.mymarket.MarketActivity;
 import br.com.compilando.mymarket.R;
+import data.MyShoppingCart;
 import model.Product;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -48,6 +49,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             public void onClick(View v) {
                 System.out.println(products.get(i).getName());
                 Toast.makeText(context,"Adicionado com sucesso",Toast.LENGTH_SHORT).show();
+                MyShoppingCart.addToMyShoppingCart(products.get(i));
 
             }
         });

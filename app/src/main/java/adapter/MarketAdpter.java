@@ -29,7 +29,7 @@ public class MarketAdpter  extends RecyclerView.Adapter<MarketAdpter.MyViewHolde
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view =   LayoutInflater.from(context).inflate(R.layout.market_list_adapter_teste, viewGroup, false);
+        View view =   LayoutInflater.from(context).inflate(R.layout.market_list_card, viewGroup, false);
         return new MyViewHolder(view);
     }
 

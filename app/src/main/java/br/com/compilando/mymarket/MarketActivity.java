@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,7 @@ import java.util.List;
 
 import adapter.ProductAdapter;
 import data.MarketData;
+import data.MyShoppingCart;
 import model.Product;
 
 public class MarketActivity extends AppCompatActivity {
@@ -33,7 +35,6 @@ public class MarketActivity extends AppCompatActivity {
     private EditText searchText;
     private ImageView btnSearch;
     private Spinner spinnerProductCategory;
-    private static int itemId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +131,19 @@ public class MarketActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_cart, menu);
         return true;
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.actionMyCart:
+                for (Product p : MyShoppingCart.getProductsInShoppingCart()){
+                    System.out.println(p.getName());
+                }
+                return true;
+            default:
+                return true;
+        }
     }
 
     private void showMessage(String msg){
